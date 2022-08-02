@@ -5,7 +5,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 
 import customTheme from "lib/styles/theme";
 
-const APP_NAME = "nextarter-chakra";
+const APP_NAME = "BAMFolio";
 
 class MyDocument extends Document {
   static getInitialProps(ctx: DocumentContext) {
@@ -33,13 +33,13 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#FFFFFF" />
 
           {/* add your own app-icon */}
-          {/* <link
+          <link
             rel="apple-touch-icon"
             sizes="180x180"
             href="/icons/apple-touch-icon.png"
           />
-          <link rel="icon" href="/app-icon.png" /> */}
-          <link rel="manifest" href="/manifest.json" />
+          <link rel="icon" href="/assets/bamfav.png" />
+          <link rel="manifest" href="/assets/manifest.json" />
         </Head>
         <body>
           <ColorModeScript

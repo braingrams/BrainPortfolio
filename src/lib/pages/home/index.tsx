@@ -1,25 +1,24 @@
 import { Box } from "@chakra-ui/react";
+import { BiArrowToTop } from "react-icons/bi";
+import ScrollToTop from "react-scroll-to-top";
 
-import CTASection from "lib/components/samples/CTASection";
-import SomeImage from "lib/components/samples/SomeImage";
-import SomeText from "lib/components/samples/SomeText";
+import About from "./About";
+import Gallery from "./Gallery";
+// import EduExp from "./EduExp";
+import Hero from "./Hero";
+import HireBanner from "./HireBanner";
+import Skills from "./Skills";
 
 const Home = () => {
   return (
-    <Box
-      display={{ md: "flex" }}
-      alignItems="center"
-      minHeight="70vh"
-      gap={8}
-      mb={8}
-      w="full"
-    >
-      <SomeImage />
-
-      <Box>
-        <SomeText />
-        <CTASection />
-      </Box>
+    <Box w="full">
+      <ScrollToTop smooth component={<BiArrowToTop />} className="scroll" />
+      <Hero />
+      <About />
+      <Skills />
+      {/* <EduExp /> */}
+      <HireBanner />
+      <Gallery />
     </Box>
   );
 };

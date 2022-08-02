@@ -1,0 +1,30 @@
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: #dce1e7;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 15px;
+}
+.scroll svg {
+  width: 100%;
+  font-size: 1.2rem;
+}
+.scroll {
+  background-color: #ffde00;
+  right: 40px;
+  bottom: 40px;
+  position: fixed;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 7px;
+  width: 40px;
+  height: 40px;
+  transition: opacity 1s ease-in-out;
+  box-shadow: 0 9px 25px 0 rgb(132 128 177 / 28%);
+  border: none;
+  outline: none;
+}

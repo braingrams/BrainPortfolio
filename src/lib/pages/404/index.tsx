@@ -24,7 +24,7 @@ const Page404 = () => {
         margin="0 auto"
       >
         <Image
-          src="/404 Error-pana.svg"
+          src="/assets/404 Error-pana.svg"
           alt="Error 404 not found Illustration"
         />
       </MotionBox>
@@ -46,6 +46,7 @@ const Page404 = () => {
           <Link href="/" passHref>
             <Button
               backgroundColor={colorMode === "light" ? "gray.300" : "teal.500"}
+              my="1rem"
             >
               Let&apos;s Head Back
             </Button>

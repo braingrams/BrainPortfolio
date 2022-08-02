@@ -1,12 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 
 import defaultSEOConfig from "../../next-seo.config";
 import { Chakra } from "lib/components/Chakra";
 import Layout from "lib/layout";
+
 import "lib/styles/globals.css";
+
+// @ts-ignore
+const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+  ssr: false,
+});
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -18,7 +25,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <DefaultSeo {...defaultSEOConfig} />
+
       <Layout>
+        <AnimatedCursor
+          // @ts-ignore
+          innerSize="1rem"
+          color="246,211,0"
+        />
         <Component {...pageProps} />
       </Layout>
     </Chakra>
