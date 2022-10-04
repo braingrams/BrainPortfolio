@@ -8,10 +8,10 @@ import {
   useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
-import HireModal from "lib/components/utils/HireModal";
 import Lottie from "react-lottie";
 
 import animationData from "../../../lotties/hired.json";
+import HireModal from "lib/components/utils/HireModal";
 
 function HireBanner() {
   const defaultOptions = {
