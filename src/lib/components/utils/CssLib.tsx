@@ -27,11 +27,11 @@ export default function CssLib() {
   };
   return (
     <VStack w="full" justify="center" h="full">
-      <Box w="50%" textAlign="center" mx="auto">
+      <Box w={["90%", "50%"]} textAlign="center" mx="auto">
         <Heading color="white" fontSize="1.7rem" mb=".5rem">
           The CSS Libraries
         </Heading>
-        <Text color="white" fontSize=".9rem" w="70%" mx="auto">
+        <Text color="white" fontSize=".9rem" w={["80%", "70%"]} mx="auto">
           Particular Css Libraries are used to enhance speed and efficiency in a
           web application used based on project requirements, maintenance and
           bogousity
@@ -43,13 +43,13 @@ export default function CssLib() {
         justify="center"
         w="90%"
         mx="auto"
-        flexDirection="row"
+        direction={["column", "row"]}
         gap={8}
       >
-        <Box w="50%">
+        <Box w="50%" display={["none", "block"]}>
           <Lottie options={defaultOptions} height="auto" width="80%" />/
         </Box>
-        <Box w="50%" textAlign="center" mt="2rem !important">
+        <Box w={["full", "50%"]} textAlign="center" mt="2rem !important">
           <Box mb="1rem">
             <Text
               color="white"

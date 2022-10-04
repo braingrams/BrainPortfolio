@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "projectName": "PropertyMataaz | Web",
+        "contributors": "Gomina Maryam | Elizabeth Kolade | Anukam Chidalu",
+        "siteLink": "https://propertymataaz.com/",
+        "imageUrl": "/assets/pmweb.jpg",
+        "theme": "#0042ff"
+    },
+    {
+        "id": 2,
+        "projectName": "Flypal | Web & Admin",
+        "contributors": "Self completion",
+        "siteLink": "https://flypalng.herokuapp.com/",
+        "imageUrl": "/assets/flypal.jpg",
+        "theme": "#007f82"
+    },
+    {
+        "id": 3,
+        "projectName": "PropertyMataaz | Admin",
+        "contributors": "Self completion",
+        "siteLink": "https://propertymataaz.com/admin/",
+        "imageUrl": "/assets/pmadm.jpg",
+        "theme": "#0042ff"
+    },
+    {
+        "id": 4,
+        "projectName": "Liquede | Admin",
+        "contributors": "Uwadone Rapheal",
+        "siteLink": "https://liquede.com/admin/",
+        "imageUrl": "/assets/liqadm.jpg",
+        "theme": "#000000"
+    },
+    {
+        "id": 5,
+        "projectName": "Harmonics Technology",
+        "contributors": "Gomina Maryam | Elizabeth Kolade | Anukam Chidalu",
+        "siteLink": "https://harmonicstechnology.com/",
+        "imageUrl": "/assets/harweb.jpg",
+        "theme": "#A03CAE"
+    },
+    {
+        "id": 6,
+        "projectName": "StudioMart | Web",
+        "contributors": "Gomina Maryam | Elizabeth Kolade | Anukam Chidalu",
+        "siteLink": "https://studiomart.com/",
+        "imageUrl": "/assets/stweb.jpg",
+        "theme": "rgba(227,188,106,1)"
+    }
+]

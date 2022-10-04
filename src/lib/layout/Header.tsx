@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-nested-ternary */
 import {
   Box,
@@ -8,6 +9,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenuFold } from "react-icons/ai";
 
@@ -25,6 +27,9 @@ const Header = () => {
 
   const [navbar, setNavbar] = useState(false);
   const [openNav, setOpenNav] = useState(true);
+  const router = useRouter();
+  const isThankYou = router.asPath === "/thanks";
+  const isConnect = router.asPath === "/connect";
   const ChangeHeaderPosition = () => {
     const scrollHeight = 80;
     const pos = window.scrollY;
@@ -36,11 +41,16 @@ const Header = () => {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", ChangeHeaderPosition);
+    if (!isConnect) {
+      window.addEventListener("scroll", ChangeHeaderPosition);
+    }
   }, []);
   return (
     <Flex
-      w={navbar && openNav ? "10%" : navbar && !openNav ? "0%" : "full"}
+      w={[
+        navbar && openNav ? "40%" : navbar && !openNav ? "0%" : "full",
+        navbar && openNav ? "10%" : navbar && !openNav ? "0%" : "full",
+      ]}
       pos={navbar ? "fixed" : "unset"}
       top="50%"
       left={0}
@@ -48,8 +58,9 @@ const Header = () => {
       justify="center"
       zIndex="900"
       bgColor={colorMode === "light" ? "white" : "#1a202c"}
-      shadow="sm"
+      shadow="md"
       borderRadius={navbar ? "0 25px 25px 0 " : "0"}
+      display={isThankYou ? "none" : "flex"}
       // transition="all ease .2s"
     >
       {navbar ? (
@@ -95,6 +106,7 @@ const Header = () => {
           gap={navbar ? "1.5rem" : "4rem"}
           direction={navbar ? "column" : "row"}
           align="center"
+          display={[navbar && openNav ? "flex" : "none", "flex"]}
         >
           <Box onClick={() => getNavLinks("home")}>
             <NavItems navlink="home" isActive={isActive} />

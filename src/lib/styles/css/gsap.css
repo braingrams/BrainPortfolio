@@ -13,3 +13,8 @@ body {
 .pin-spacer {
   padding: 0 0 450% !important;
 }
+@media screen and (max-width: 768px) {
+  .pin-spacer {
+    padding: 0 0 600% !important;
+  }
+}

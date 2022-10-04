@@ -2,6 +2,7 @@ import {
   Box,
   Heading,
   HStack,
+  Stack,
   Text,
   useColorMode,
   VStack,
@@ -35,28 +36,31 @@ export default function About() {
     },
   };
   return (
-    <Box id="about" bgImage="/assets/bg3.png" py="5rem">
+    <Box id="about" bgImage="/assets/bg3.png" py="5rem" h="100vh">
       <VStack>
         <Heading
-          fontSize="3xl"
+          fontSize={["2xl", "3xl"]}
           borderBottom="4px solid"
           borderColor="brand.100"
           w="fit-content"
         >
           About Me
         </Heading>
-        <Text>First of all introduction, knowing me is actually fun</Text>
+        <Text w={["70%", "full"]} textAlign="center">
+          First of all introduction, knowing me is actually fun
+        </Text>
       </VStack>
-      <HStack
+      <Stack
         w="90%"
         mx="auto"
-        gap="5rem"
-        mt="4rem"
+        gap={["3rem", "5rem"]}
+        mt={["2rem", "4rem"]}
         alignItems="center"
-        h="70vh"
+        h={["auto", "70vh"]}
+        direction={["column", "row"]}
       >
         <Box
-          w="50%"
+          w={["full", "50%"]}
           py="3rem"
           bgColor={colorMode === "light" ? "white" : "inherit"}
           //   borderRadius="0 50px 50px"
@@ -66,34 +70,40 @@ export default function About() {
             Short Overview
           </Heading>
           <VStack>
-            <Text fontSize=".9rem">
+            <Text fontSize=".9rem" noOfLines={[3, 30]}>
               Have you ever imagined working with a developer that is
               goal-driven, smart, effective and communicative? Well that is me!
-            </Text>
-            <Text fontSize=".9rem">
+              <br />
+              <br />
               Hi once again. I am by virture of nomenclature addressed as
               <strong> Bukunmi Akinyemi Mustapha (BAM)</strong>, A young Yoruba
               man who hails from osun state, a practising muslim and lives in
               the outskirt of Lagos.
-            </Text>
-            <Text fontSize=".9rem">
-              I am a frontend software engineer who's so particular about
+              <br />
+              <br />I am a frontend software engineer who's so particular about
               actualizing web related dream leading to the production of web
               applications that are blazing fast in speed, responsive, problem
               solving, efficient, and in vogue with the use of modern
               technologies/library and most supported stack around the globe
-            </Text>
-            <Text fontSize=".9rem">
-              I have an experience of 3 years with consistent code writing, web
-              app building and problem solving approaches
-            </Text>
-            <Text fontSize=".9rem">
+              <br />
+              <br />I have an experience of 3 years with consistent code
+              writing, web app building and problem solving approaches
+              <br />
+              <br />
               As a matter of fact, this is a mere snippet of who I really am.
               Want to know more about me? then <strong>Hire me!</strong>
             </Text>
+            <Text
+              textAlign="center"
+              textDecor="underline"
+              fontSize=".9rem"
+              display={["block", "none"]}
+            >
+              Read full about me on my social network
+            </Text>
           </VStack>
         </Box>
-        <Box w="60%" pos="relative">
+        <Box w={["full", "60%"]} pos="relative">
           <VStack gap={5}>
             <ServiceCard
               title="Efficacy"
@@ -101,7 +111,7 @@ export default function About() {
               icon={<GrDocumentPerformance />}
               subtitle="I have the ability to perform a task to a satisfactory or expected degree."
             />
-            <HStack gap={4}>
+            <HStack gap={[2, 4]}>
               <ServiceCard
                 title="Intuitive Performance"
                 icon={<FcSalesPerformance />}
@@ -120,15 +130,26 @@ export default function About() {
               icon={<IoTimerSharp />}
               subtitle="Quality without speed and deliverables at proposed time frame is not a flex. I'm time conscious"
             />
-            <Box pos="absolute" right="0">
-              <Lottie options={defaultOptions} height={100} width={200} />
+            <Box
+              pos="absolute"
+              right="0"
+              h={["70px", "100px"]}
+              w={["140px", "200px"]}
+            >
+              <Lottie options={defaultOptions} height="100%" width="100%" />
             </Box>
-            <Box pos="absolute" left="0" bottom="0">
-              <Lottie options={defaultOptionsB} height={120} width={150} />
+            <Box
+              pos="absolute"
+              left="0"
+              bottom="0"
+              h={["100px", "120px"]}
+              w={["120px", "150px"]}
+            >
+              <Lottie options={defaultOptionsB} height="100%" width="100%" />
             </Box>
           </VStack>
         </Box>
-      </HStack>
+      </Stack>
     </Box>
   );
 }

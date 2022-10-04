@@ -26,12 +26,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <DefaultSeo {...defaultSEOConfig} />
 
+      <AnimatedCursor
+        // @ts-ignore
+        innerSize="1rem"
+        color="246,211,0"
+      />
       <Layout>
-        <AnimatedCursor
-          // @ts-ignore
-          innerSize="1rem"
-          color="246,211,0"
-        />
         <Component {...pageProps} />
       </Layout>
     </Chakra>

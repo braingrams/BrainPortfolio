@@ -35,8 +35,10 @@ export default function Skillset() {
       h="full"
       mx="auto"
       justify="space-between"
+      flexDir={["column", "row"]}
+      py={["4rem", "0"]}
     >
-      <VStack w="40%" align="flex-start" spacing={5}>
+      <VStack w={["full", "40%"]} align="flex-start" spacing={5}>
         <Heading fontSize="3xl" w="fit-content">
           My Skill-Set over the years
         </Heading>
@@ -50,7 +52,7 @@ export default function Skillset() {
             work faster and improve user experience also meeting with time
             proposed
           </Text>
-          <Text fontSize=".9rem">
+          <Text fontSize=".9rem" noOfLines={4}>
             Javascript came into the picture and became the most popular
             language with multiple features and a huge user base and there comes
             React JS, Next JS and other Javascript libraries and frameworks
@@ -58,7 +60,7 @@ export default function Skillset() {
           </Text>
         </VStack>
       </VStack>
-      <Box w="40%">
+      <Box w={["full", "40%"]}>
         <Grid templateColumns="repeat(4, 1fr)" rowGap={8}>
           <SkillsCard icon={<Icon as={AiFillHtml5} />} />
           <SkillsCard icon={<Icon as={DiCss3} />} />

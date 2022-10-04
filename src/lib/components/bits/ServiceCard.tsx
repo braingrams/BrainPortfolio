@@ -11,11 +11,11 @@ function ServiceCard({ icon, title, subtitle, mr }: ServiceCardProps) {
   return (
     <HStack
       bgColor={colorMode === "light" ? "white" : "inherit"}
-      w="50%"
+      w={["60%", "50%"]}
       px="1rem"
       borderRadius="10px"
       h="6.5rem"
-      gap="1rem"
+      gap={["0", "1rem"]}
       shadow="md"
       mr={mr}
       _hover={{
@@ -27,10 +27,12 @@ function ServiceCard({ icon, title, subtitle, mr }: ServiceCardProps) {
         {icon}
       </Circle>
       <Box>
-        <Text fontSize="1rem" fontWeight="bold">
+        <Text fontSize="1rem" fontWeight="bold" noOfLines={[1, 3]}>
           {title}
         </Text>
-        <Text fontSize=".7rem">{subtitle}</Text>
+        <Text fontSize=".7rem" noOfLines={[3, 5]}>
+          {subtitle}
+        </Text>
       </Box>
     </HStack>
   );
