@@ -25,26 +25,40 @@ function ContactUs() {
   const form = useRef<any>();
   const { colorMode } = useColorMode();
 
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-    setLoading(true);
+  // const sendEmail = (e: any) => {
+  //   console.log("I have been clicked");
 
-    emailjs
-      .sendForm(
-        "service_i9nnz0w",
-        "template_kljdmey",
-        form.current,
-        "OcKaWyrr-i5DX0B2c"
-      )
-      .then(
-        (result: any) => {
-          setLoading(false);
-          setSuccessMessage(true);
-        },
-        (error: any) => {
-          setSuccessMessage(false);
-        }
-      );
+  //   e.preventDefault();
+  //   setLoading(true);
+
+  //   emailjs
+  //     .sendForm(
+  //       "service_i9nnz0w",
+  //       "template_kljdmey",
+  //       form.current,
+  //       "OcKaWyrr-i5DX0B2c"
+  //     )
+  //     .then(
+  //       (result: any) => {
+  //         setLoading(false);
+  //         setSuccessMessage(true);
+  //       },
+  //       (error: any) => {
+  //         setLoading(false);
+  //         setSuccessMessage(false);
+  //       }
+  //     );
+  // };
+
+  const FORM_ENDPOINT =
+    "https://public.herotofu.com/v1/bae82b20-440b-11ed-9b17-6fdf7f94f506";
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 100);
   };
   return (
     <Box
@@ -69,20 +83,26 @@ function ContactUs() {
               window.open("/connect", "_blank", "noopener,noreferrer")) as any
           }
         >
-          <Image src="/assets/barcode.png" h={["300px", "450px"]} w="auto" />
+          <Image src="/assets/barcodeb.png" h={["300px", "450px"]} w="auto" />
           <Text textDecor="underline" textAlign="center">
             Unable to scan code? Click on barcode to view embeded url.
           </Text>
         </Flex>
         <Box w="full">
-          {successMesages && <Text>Message sent! Check your email</Text>}
-          <form ref={form} onSubmit={sendEmail}>
+          {submitted && <Text>Message sent! Check your email</Text>}
+          <form
+            action={FORM_ENDPOINT}
+            onSubmit={handleSubmit}
+            method="POST"
+            target="_blank"
+          >
             <VStack spacing="1rem" align="end">
               <ContactInput
                 label="Full Name"
                 name="fullName"
                 defaultValue=""
                 placeholder="Pade Omotosho"
+                required
               />
               <ContactInput
                 label="Email"
@@ -90,25 +110,28 @@ function ContactUs() {
                 defaultValue=""
                 type="email"
                 placeholder="padeomotoso@gmail.com"
+                required
               />
               <ContactInput
                 label="Phone number"
                 name="phoneNumber"
                 defaultValue=""
                 placeholder="Type in a valid phone number"
+                required
               />
               <ContactTextArea
                 label="Message"
                 name="message"
                 placeholder="Type your message here"
+                required
               />
 
               <Button
                 isLoading={loading}
                 bgColor={colorMode === "light" ? "white" : "black"}
                 w={["full", "auto"]}
+                type="submit"
               >
-                {" "}
                 Send Message
               </Button>
             </VStack>

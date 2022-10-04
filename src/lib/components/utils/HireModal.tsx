@@ -26,25 +26,17 @@ const HireModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: any }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const form = useRef<any>();
 
-  const sendEmail = (e: any) => {
-    e.preventDefault();
+  const FORM_ENDPOINT =
+    "https://public.herotofu.com/v1/bae82b20-440b-11ed-9b17-6fdf7f94f506";
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = () => {
     setLoading(true);
-
-    emailjs
-      .sendForm(
-        "service_i9nnz0w",
-        "template_kljdmey",
-        form.current,
-        "OcKaWyrr-i5DX0B2c"
-      )
-      .then(
-        (result: any) => {
-          setLoading(false);
-          router.push("/thanks");
-        },
-        (error: any) => {}
-      );
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 100);
   };
+
   return (
     <Modal
       motionPreset="slideInBottom"
@@ -80,7 +72,12 @@ const HireModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: any }) => {
         <ModalBody>
           <Box maxH="80vh" overflowY="auto" px={5}>
             <Box w="100%">
-              <form ref={form} onSubmit={sendEmail}>
+              <form
+                action={FORM_ENDPOINT}
+                onSubmit={handleSubmit}
+                method="POST"
+                target="_blank"
+              >
                 <VStack spacing="1rem" align="end">
                   <ContactInput
                     label="Full Name"
@@ -136,6 +133,7 @@ const HireModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: any }) => {
                       w="full"
                       borderRadius="35px"
                       h="3rem"
+                      type="submit"
                       color={colorMode === "dark" ? "black" : "white"}
                       bgColor={colorMode === "light" ? "black" : "white"}
                     >
