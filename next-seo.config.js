@@ -4,14 +4,14 @@ const defaultSEOConfig = {
   titleTemplate: "%s | Personal portfolio",
   defaultTitle: "BAMFolio",
   description: "My personal portfolio app",
-  canonical: "https://bamfolio.herokuapp.com",
+  canonical: "https://bamfolio.netlify.app",
   openGraph: {
-    url: "https://bamfolio.herokuapp.com",
+    url: "https://bamfolio.netlify.app",
     title: "BAMFolio",
     description: "My personal portfolio app",
     images: [
       {
-        url: "https://og-image.sznm.dev/**nextarter-chakra**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250",
+        url: "/assets/bamfav.png",
         alt: "My personal portfolio app",
       },
     ],

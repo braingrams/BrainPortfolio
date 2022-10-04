@@ -61,84 +61,96 @@ function ContactUs() {
     }, 100);
   };
   return (
-    <Box
-      w="full"
-      minH="500px"
-      bgColor={colorMode === "light" ? "brand.100" : "gray.500"}
-      mt="5rem"
-      py="2rem"
-      id="contact"
-    >
-      <Heading textAlign="center" py={["1rem", "3rem"]} textDecor="underline">
-        Need to connect?
-      </Heading>
-      <HStack w={["90%", "80%"]} mx="auto" flexDirection={["column", "row"]}>
-        <Flex
-          w="full"
-          h={["auto", "500px"]}
-          alignItems={["center", "flex-start"]}
-          flexDirection="column"
-          onClick={
-            (() =>
-              window.open("/connect", "_blank", "noopener,noreferrer")) as any
-          }
-        >
-          <Image src="/assets/barcodeb.png" h={["300px", "450px"]} w="auto" />
-          <Text textDecor="underline" textAlign="center">
-            Unable to scan code? Click on barcode to view embeded url.
-          </Text>
-        </Flex>
-        <Box w="full">
-          {submitted && <Text>Message sent! Check your email</Text>}
-          <form
-            action={FORM_ENDPOINT}
-            onSubmit={handleSubmit}
-            method="POST"
-            target="_blank"
+    <>
+      <Box ml="5.4rem" mt="5rem">
+        <svg className="w-full" viewBox="0 0 10 10" preserveAspectRatio="none">
+          <polygon fill="currentColor" points="0 10 10 0 10 10" />
+        </svg>
+      </Box>
+      <Box
+        w="full"
+        minH="500px"
+        bgColor={colorMode === "light" ? "brand.100" : "gray.500"}
+        py="3rem"
+        id="contact"
+        borderRadius="6rem 0 6rem 0"
+      >
+        <Heading textAlign="center" py={["1rem", "3rem"]} textDecor="underline">
+          Need to connect?
+        </Heading>
+        <HStack w={["90%", "80%"]} mx="auto" flexDirection={["column", "row"]}>
+          <Flex
+            w="full"
+            h={["auto", "500px"]}
+            alignItems={["center", "flex-start"]}
+            flexDirection="column"
+            onClick={
+              (() =>
+                window.open("/connect", "_blank", "noopener,noreferrer")) as any
+            }
           >
-            <VStack spacing="1rem" align="end">
-              <ContactInput
-                label="Full Name"
-                name="fullName"
-                defaultValue=""
-                placeholder="Pade Omotosho"
-                required
-              />
-              <ContactInput
-                label="Email"
-                name="email"
-                defaultValue=""
-                type="email"
-                placeholder="padeomotoso@gmail.com"
-                required
-              />
-              <ContactInput
-                label="Phone number"
-                name="phoneNumber"
-                defaultValue=""
-                placeholder="Type in a valid phone number"
-                required
-              />
-              <ContactTextArea
-                label="Message"
-                name="message"
-                placeholder="Type your message here"
-                required
-              />
+            <Image src="/assets/barcodeb.png" h={["300px", "450px"]} w="auto" />
+            <Text textDecor="underline" textAlign="center">
+              Unable to scan code? Click on barcode to view embeded url.
+            </Text>
+          </Flex>
+          <Box w="full">
+            {submitted && <Text>Message sent! Check your email</Text>}
+            <form
+              action={FORM_ENDPOINT}
+              onSubmit={handleSubmit}
+              method="POST"
+              target="_blank"
+            >
+              <VStack spacing="1rem" align="end">
+                <ContactInput
+                  label="Full Name"
+                  name="fullName"
+                  defaultValue=""
+                  placeholder="Pade Omotosho"
+                  required
+                />
+                <ContactInput
+                  label="Email"
+                  name="email"
+                  defaultValue=""
+                  type="email"
+                  placeholder="padeomotoso@gmail.com"
+                  required
+                />
+                <ContactInput
+                  label="Phone number"
+                  name="phoneNumber"
+                  defaultValue=""
+                  placeholder="Type in a valid phone number"
+                  required
+                />
+                <ContactTextArea
+                  label="Message"
+                  name="message"
+                  placeholder="Type your message here"
+                  required
+                />
 
-              <Button
-                isLoading={loading}
-                bgColor={colorMode === "light" ? "white" : "black"}
-                w={["full", "auto"]}
-                type="submit"
-              >
-                Send Message
-              </Button>
-            </VStack>
-          </form>
-        </Box>
-      </HStack>
-    </Box>
+                <Button
+                  isLoading={loading}
+                  bgColor={colorMode === "light" ? "white" : "black"}
+                  w={["full", "auto"]}
+                  type="submit"
+                >
+                  Send Message
+                </Button>
+              </VStack>
+            </form>
+          </Box>
+        </HStack>
+      </Box>
+      <Box mr="5.4rem">
+        <svg className="w-full" viewBox="0 0 10 10" preserveAspectRatio="none">
+          <polygon fill="currentColor" points="0 0 10 0 0 10" />
+        </svg>
+      </Box>
+    </>
   );
 }
 

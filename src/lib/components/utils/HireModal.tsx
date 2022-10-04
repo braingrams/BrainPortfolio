@@ -109,7 +109,7 @@ const HireModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: any }) => {
                   />
 
                   <HStack
-                    spacing="1rem"
+                    gap={["0", "1rem"]}
                     w="100%"
                     justify="space-between"
                     align="center"
