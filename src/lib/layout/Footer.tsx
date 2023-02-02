@@ -18,7 +18,7 @@ import {
 const Footer = () => {
   const { colorMode } = useColorMode();
   const router = useRouter();
-  const isThankYou = router.asPath === "/thanks";
+  const isThankYou = router.asPath === "/thanks" || router.asPath === "/lae";
   const isConnect = router.asPath === "/connect";
   return (
     <Box

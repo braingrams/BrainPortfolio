@@ -28,7 +28,7 @@ const Header = () => {
   const [navbar, setNavbar] = useState(false);
   const [openNav, setOpenNav] = useState(true);
   const router = useRouter();
-  const isThankYou = router.asPath === "/thanks";
+  const isThankYou = router.asPath === "/thanks" || router.asPath === "/lae";
   const isConnect = router.asPath === "/connect";
   const ChangeHeaderPosition = () => {
     const scrollHeight = 80;
