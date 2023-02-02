@@ -11,7 +11,13 @@ interface DashProps {
 
 export const SingleSocial = ({ icon, url, color, site, nop }: DashProps) => {
   return (
-    <HStack boxShadow="md" p="1rem" borderRadius="10px">
+    <HStack
+      boxShadow="md"
+      p="1rem"
+      borderRadius="10px"
+      w={["full", "auto"]}
+      justify={["center", "flex-start"]}
+    >
       <Circle size="2rem" bg={color} color="white">
         <Icon as={icon} />
       </Circle>

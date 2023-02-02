@@ -25,29 +25,29 @@ function Lae() {
   return (
     <Box w="full" minH="100vh" bgColor="black">
       <Flex
-        w="75%"
+        w={["full", "75%"]}
         mx="auto"
         py="1.5rem"
         bgColor="white"
-        px="8rem"
+        px={["1rem", "8rem"]}
         minH="100vh"
       >
         <Box w="full">
           <Flex
             align="center"
             w="full"
-            h="15rem"
+            h={["10rem", "15rem"]}
             bgColor="black"
             borderRadius="30px"
             p="2rem"
             justify="center"
           >
-            <Box h="8rem">
+            <Box h={["6rem", "8rem"]}>
               <Image src="/assets/lae.png" w="auto" h="full" />
             </Box>
           </Flex>
           <Box my="2rem">
-            <Heading>Store Description</Heading>
+            <Heading textAlign={["left", "left"]}>Store Description</Heading>
             <Text>
               Love and everything is an e-commerce therapy business that
               facilitates healing process by providing all the tools necessary
@@ -59,7 +59,7 @@ function Lae() {
             <Text fontSize="1.1rem" mb=".5rem">
               Social Media Address
             </Text>
-            <HStack gap="1rem">
+            <HStack gap="1rem" spacing="0" flexWrap="wrap">
               <SingleSocial
                 site="Facebook"
                 url="http://facebook.com/loveandeverything"
@@ -84,14 +84,7 @@ function Lae() {
             <Text fontSize="1.1rem" m="1.5rem 0 .5rem">
               For More Information
             </Text>
-            <HStack gap="1rem">
-              <SingleSocial
-                site="Whatsapp"
-                url="https://wa.me/+2347086072193"
-                icon={RiWhatsappFill}
-                color="#009b35"
-                nop
-              />
+            <HStack gap="1rem" flexWrap="wrap" spacing="0">
               <SingleSocial
                 site="Phone"
                 url="tel:07054585881"
@@ -104,6 +97,13 @@ function Lae() {
                 url="mailto:Loveandevery10@gmail.com"
                 icon={SiGmail}
                 color="#4086f4"
+                nop
+              />
+              <SingleSocial
+                site="Whatsapp"
+                url="https://wa.me/+2347086072193"
+                icon={RiWhatsappFill}
+                color="#009b35"
                 nop
               />
             </HStack>
