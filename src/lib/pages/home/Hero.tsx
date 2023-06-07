@@ -98,7 +98,7 @@ export default function Hero() {
               borderRadius="35px"
               onClick={() => {
                 handleDownload(
-                  "https://ucarecdn.com/55dc7628-300e-4845-95de-4409c98965d1/",
+                  "https://ucarecdn.com/2eff1201-8271-4b43-a9cd-0eafbf829187/",
                   "bamfolio-cv.pdf"
                 );
               }}
